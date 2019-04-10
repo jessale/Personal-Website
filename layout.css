@@ -1,0 +1,152 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.desktop {
+	height: 100%;
+	display: flex;
+  background-image: url(img/background.jpg);
+  background-size: cover;
+  background-color: #cccccc;
+}
+
+.taskbar {
+  background-color: black;
+  position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 30px;
+  opacity: 1;
+  display: flex;
+
+}
+
+.start-button {
+  position: relative;
+  border: none;
+  background:transparent;
+  z-index: 2;
+  opacity: 1!important;
+
+}
+.quick {
+  display:flex;
+  flex: 0.1;
+  height: 100%;
+}
+.quick-icons {
+  display: flex;
+
+}
+.quick-icon{
+  positon: absolute;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+.quick-icon:hover {
+  transform: scale(0.95);
+}
+.tasks {
+	display: flex;
+	flex: 1;
+	height: 100%;
+}
+
+.tray {
+	display: flex;
+	flex-direction: row;
+	line-height: 22px;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+#time {
+  margin-top: 3px;
+  text-align: center;
+  color: white;
+	width: 50px;
+  font-size: 10;
+  display: flex;
+  flex: 1;
+}
+.desktop-icons {
+  margin-left: 50px;
+}
+
+.icon {
+  positon: absolute;
+  margin-top: 4px;
+  padding: 8px;
+  width: 70px;
+  background-size: 48px!important;
+}
+
+.icon .text {
+    cursor: default;
+    font-size: 15px;
+    position: relative;
+    margin: 38px 0 0;
+    color: #fff;
+    font-weight: 300;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#draggable, #draggable2, #draggable3 {}
+
+.widget{
+height:600px;
+width:986px;
+background:#ebebeb;
+  position: absolute;
+top: 0px;
+left: 166px;
+z-index:9999;
+border:3px solid #91d5e7;
+}
+.title{
+clear:both;
+display:block;
+padding:5px;
+height:20px;
+background:#8ed4e5;
+cursor:move;
+}
+.wbutton{
+float:right;
+width:120px;
+height:21px;
+background:#557f89;
+position:relative;
+margin-top:-8px;
+margin-right:-5px;
+}
+.wbutton a{
+float:left;
+width:39px;
+margin-left:1px;
+height:12px;
+background:#bce5f0;
+text-align:center;
+padding:4px 0;
+}
+.wbutton a.close{
+background:#ca3226;
+}
+.widget .panel{
+height:570px;
+clear:both;
+display:block;
+}
+.panel-right{
+
+width:100%;
+height:100%;
+background:#fcfcfc;
+}
