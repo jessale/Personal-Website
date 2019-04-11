@@ -6,13 +6,14 @@
 		<link href="layout.css" rel="stylesheet" type="text/css">
     <link href="lib/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://unpkg.com/jquery.terminal@1.x.x/css/jquery.terminal.min.css"/>
 	</head>
 	<body>
 		<div class="desktop" id ="desktop">
       <div class="desktop-icons" id="desktop-icons" style="display:block;"></div>
     </div>
 		<div class="taskbar">
-			<button class="start-button">
+			<button class="start-button" onclick="window.location.href='#start-menu-modal'" id="start-menu">
 				<img src="img/startbutton.png"/>
 			</button>
       <div class="quick">
@@ -32,6 +33,53 @@
 			</div>
 		</div>
     <div class="calender"></div>
+
+		<!-- Start menu -->
+		    <div id="start-menu-modal">
+		        <div id="user">
+		            <a class="push" href="#"><i class="fas fa-bars"></i></a>
+		            <a href="#"><i class="fas fa-user"></i></a>
+		            <a href="#"><i class="fas fa-cog"></i></a>
+		            <a href="#"><i class="fas fa-power-off"></i></a>
+		        </div>
+		        <div id="apps">
+		            <a class="category" href="#">Applications</a>
+		            <a href="#"><img src="img/firefox.png" alt="firefox"> <span>Firefox</span></a>
+		            <a href="#"><img src="img/mail.png" alt="mail"> <span>Mail</span></a>
+		        </div>
+		        <div id="others">
+		            <div class="title-others">
+		                My Projects
+		            </div>
+		            <div class="box-others">
+		                <div class="box">
+		                    <img src="" alt="">
+		                    <span>4 Connect</span>
+		                </div>
+		                <div class="box">
+		                    <img src="" alt="">
+		                    <span>Chrome Extention</span>
+		                </div>
+		                <div class="box">
+		                    <img src="" alt="">
+		                    <span>Amazon Scraper</span>
+		                </div>
+		                <div class="box">
+		                    <img src="" alt="">
+		                    <span>React JS</span>
+		                </div>
+		                <div class="box">
+		                    <img src="" alt="">
+		                    <span></span>
+		                </div>
+		                <div class="box">
+		                    <img src="" alt="">
+		                    <span></span>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+
 		<div class="start-menu" hidden style="display: none;">
 			<div class="start-menu-titlebar"></div>
 			<div class="start-menu-content">
@@ -95,5 +143,8 @@
     <script src="src/calender.js"></script>
     <script src="src/program.js" charset="utf-8"></script>
     <script src="src/startmenu.js" charset="utf-8"></script>
+		<script src="src/terminal.js" charset="utf-8"></script>
+		<script src="https://unpkg.com/jquery.terminal@1.x.x/js/jquery.terminal.min.js"></script>
+
 	</body>
 </html>
