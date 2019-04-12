@@ -1,6 +1,7 @@
 let documents = document.createElement("DIV");
 documents.setAttribute("class", "icons");
 documents.setAttribute("draggable", "true");
+documents.setAttribute("id", "documents");
 documents.innerHTML = '<p class="text"><span>MyProjects</span></p>';
 documents.style.background ="url(img/folder.png) center top no-repeat";
 desktopicons = document.getElementById("desktop-icons");
@@ -24,6 +25,11 @@ desktopicons = document.getElementById("desktop-icons");
 desktopicons.append(legal);
 
 $("#legal").click(function() {
-  $("#explorer").css("visibility", "visible");
-  $(".tasks").append("<div id='task'><p class='task_text'><span>Game</span></p></div>");
+  word();
+
+});
+
+$("#documents").click(function() {
+  explorer();
+
 });
