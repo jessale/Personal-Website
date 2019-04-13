@@ -165,6 +165,22 @@ iframe {
   cursor: move;
 }
 
+.menu-bar {
+  display: grid;
+grid-template-columns: repeat(10, max-content);
+padding: 15px;
+grid-gap: 30px;
+background: #f3f2f1;
+}
+.menu-bar div:nth-child(2) span {
+    display: inline-block;
+    position: relative;
+    border-bottom: 5px solid #2D5698;
+    padding-bottom: 6px;
+    font-weight: 700;
+}
+
+
 
 .windowbar {
   margin-left: 10px;
