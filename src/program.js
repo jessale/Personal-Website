@@ -78,7 +78,7 @@ function word(){
   } );
 
 let word = document.createElement("DIV");
-word.innerHTML = '<div class="window" id="explorer">\
+word.innerHTML = '<div class="window" id="word">\
 <div class="title-word"><div class="title-left"></div>\
 <div class=title-middle>Legal.docs - Word</div> \
 <div class="chrome-close title-right" id="closew">\
@@ -86,6 +86,19 @@ word.innerHTML = '<div class="window" id="explorer">\
     <a href="#"><i class="far fa-window-restore"></i></a>\
     <a id="close" ><i class="fas fa-times"></i></a>\
 </div>\
+</div> \
+<div class="menu-bar"><div class="menu-bar">\
+<div><span>File</span></div>\
+<div><span>Home</span></div>\
+<div><span>Insert</span></div>\
+<div><span>Page Layout</span></div>\
+<div><span>Formulas</span></div>\
+<div><span>Data</span></div>\
+<div><span>Review</span></div>\
+<div><span>View</span></div>\
+<div><span>Help</span></div>\
+</div></div> \
+<div class="icon-bar">\
 </div> \
 <div class ="panel-right">\
      <iframe src="programs/projects/index.html" frameborder="0" width="100%" height="100%"></iframe>\
