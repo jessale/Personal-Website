@@ -1,4 +1,6 @@
 class Connect4 {
+
+  //constructor 
   constructor(selector) {
     this.ROWS = 6;
     this.COLS = 7;
@@ -64,7 +66,7 @@ class Connect4 {
       $lastEmptyCell.data('player', that.player);
 
       const winner = that.checkForWinner(
-        $lastEmptyCell.data('row'), 
+        $lastEmptyCell.data('row'),
         $lastEmptyCell.data('col')
       )
       if (winner) {
@@ -95,7 +97,7 @@ class Connect4 {
       while (i >= 0 &&
         i < that.ROWS &&
         j >= 0 &&
-        j < that.COLS && 
+        j < that.COLS &&
         $next.data('player') === that.player
       ) {
         total++;
@@ -133,8 +135,8 @@ class Connect4 {
       return checkWin({i: 0, j: -1}, {i: 0, j: 1});
     }
 
-    return checkVerticals() || 
-      checkHorizontals() || 
+    return checkVerticals() ||
+      checkHorizontals() ||
       checkDiagonalBLtoTR() ||
       checkDiagonalTLtoBR();
   }
