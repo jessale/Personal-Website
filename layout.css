@@ -149,8 +149,11 @@ iframe {
   height: 30px;
   width: 100%;
   position: absolute;
-  // border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  display: flex;
+  text-align: center;
+  display: table;
+  table-layout: fixed;
+  place-text: center;
+  color: #fff;
 }
 
 .title-word {
