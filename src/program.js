@@ -32,8 +32,9 @@ function explorer(){
 
 let explorer = document.createElement("DIV");
 explorer.innerHTML = '<div class="window" id="explorer">\
-<div class="title"><div class="windowbar"><span>File Explorer</span></div> \
-<div class="chrome-close">\
+<div class="title"><div class="title-left"></div>\
+<div class=title-middle>Legal.docs - Word</div> \
+<div class="chrome-close title-right" id="closew">\
     <a href="#"><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
     <a id="close" ><i class="fas fa-times"></i></a>\
