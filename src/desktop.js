@@ -14,7 +14,10 @@ function Deskicon(id, name, iconurl){
 
 const documents = new Deskicon('documents', 'MyProjects','img/folder.png')
 const mail2 = new Deskicon('mail', 'Email', 'img/mail.png')
+const test = new Deskicon('resume', 'CV.pdf', 'img/pdf.png')
 const legal = new Deskicon('legal', 'Legal.docx', 'img/word.png')
+//const cv = new Deskicon('cv', 'CV.pdf' 'img/pdf.png')
+
 /*
 let documents = document.createElement("DIV");
 documents.setAttribute("class", "icons");
@@ -25,6 +28,9 @@ documents.style.background ="url(img/folder.png) center top no-repeat";
 desktopicons = document.getElementById("desktop-icons");
 desktopicons.append(documents); */
 
+$("#resume").click(function() {
+  window.open ("http://floshodan.io/cv", "_blank");
+});
 
 $("#legal").click(function() {
   word();
