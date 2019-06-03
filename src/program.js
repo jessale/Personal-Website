@@ -102,7 +102,7 @@ word.innerHTML = '<div class="window" id="word">\
 <div class="icon-bar">\
 </div> \
 <div class ="panel-right">\
-     <iframe src="programs/resume/resume.html" frameborder="0" width="100%" height="100%"></iframe>\
+     <iframe src="programs/legal/index.html" frameborder="0" width="100%" height="100%"></iframe>\
 </div> '
 
 $("#desktop").append(word)
