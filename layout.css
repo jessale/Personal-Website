@@ -322,21 +322,20 @@ padding-left:30px;
 }
 
 
-#start-menu-modal {
+.start-menu-modal {
   background-color: rgba(0,0,0,0.5);
   position: absolute;
   left: 0;
   bottom: 28px;
   height: 600px;
   color: white;
-  visibility: hidden;
-  display: grid;
+  display: none;
   grid-template-columns: 50px 250px 400px;
   cursor: default;
 }
 
-#start-menu-modal:target {
-  visibility: visible !important;
+.startmenu-active {
+  display: grid!important;
   animation-name: open;
   animation-duration: 0.1s;
   transition: 0.1s;
