@@ -24,6 +24,7 @@ function Projekt(id, url, name, description) {
 
 };
 
+
 filterSelection("all") // Execute the function and show all columns
 function filterSelection(c) {
   var x, i;
@@ -64,12 +65,26 @@ function w3RemoveClass(element, name) {
 // Add active class to the current button (highlight it)
 window.onload = function() {
 var lis = document.getElementById("sort-ul").querySelectorAll("li");
-for (var i = 0; i < lis.length; i++) {
-  lis[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
+    lis.forEach(li => {
+        li.addEventListener('click', function(){
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    });
 }
-}
+
+// for (var i = 0; i < lis.length; i++) {
+//   lis[i].addEventListener("click", function(){
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
+// }
+
+array = [20, 10, 25];
+array.forEach(function (i) {
+    console.log(i); 
+});
 
