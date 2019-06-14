@@ -1,3 +1,3 @@
-$( "#start-menu" ).click(function() {
-   $('#start-menu-modal').toggle();
-});
+ $( "#start-menu" ).click(function() {
+     $('.start-menu-modal').toggleClass('startmenu-active');
+ });
