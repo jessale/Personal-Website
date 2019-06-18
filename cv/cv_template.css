@@ -163,6 +163,15 @@ a:visited {
     display: flex;
 }
 
+.experience-prog {
+    display: grid;
+    grid-template-columns: 80px auto 60px auto;
+}
+
+.empty {
+    height: 30px;
+}
+
 
 
 .main {
