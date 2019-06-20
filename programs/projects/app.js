@@ -1,14 +1,15 @@
-function Projekt(id, url, name, description) {
+function Projekt(id, url, name, description, i) {
     this.id =id;
     this.url =url;
     this.name = name;
     this.description = description;
+    this.i = i;
     let projectbox = document.createElement('DIV');
     projectbox.setAttribute("class", "projectbox");
     projectbox.setAttribute("data-categorie", `${this.id}`);
     projectbox.innerHTML =
    `<div class="preview-image" style="">
-        <a href="#"><img src="${this.url}" alt="${this.name}" style="width:100%">
+        <a href="project${this.i}"><img src="${this.url}" alt="${this.name}" style="width:100%">
     <div class="middle">
        <div class="text">
             info
@@ -23,6 +24,19 @@ function Projekt(id, url, name, description) {
     projectlist = document.getElementById("projectrow").append(projectbox);
 
 };
+
+// Make GET Request 
+const userAction = (async () => {
+    const response = await fetch('http://localhost:3000/api/projects');
+    const myJson = await response.json(); 
+
+    let length = myJson.length;
+    console.log(length);
+    console.log(myJson);
+    myJson.forEach((project, i) => {
+        new Projekt(project.categorie, project.previewimg, project.projectname, project.describtion, i+1);
+    });
+})();
 
 
 filterSelection("all") // Execute the function and show all columns
