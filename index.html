@@ -12,6 +12,7 @@
 	<body>
 		<div class="desktop" id ="desktop">
       <div class="desktop-icons" id="desktop-icons" style="display:block;"></div>
+      <div id="react_container"></div>
     </div>
 		<div class="taskbar">
 			<button class="start-button blurred-bg" id="start-menu">
@@ -84,8 +85,13 @@
 			</div>
 			</div>
 		</div>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="lib/jquery-ui.min.js" charset="utf-8"></script>
+    <script src="src/widget.js"></script>
     <script src="src/desktop.js" charset="utf-8"></script>
 		<script src="src/time.js"></script>
     <script src="src/calender.js"></script>
