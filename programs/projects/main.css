@@ -39,7 +39,6 @@
 }
 
 .projectlist {
-    min-height: 100px;
     width: 100%;
     float: left;
     display: inline;
@@ -55,7 +54,7 @@
 
 .projectbox {
     width: 23%;
-    height: auto;
+    height: 100%;
     margin: 5px;
     box-sizing: border-box;
 }
@@ -101,7 +100,9 @@
 }
 
 .descriptbox {
+    position: relative;
     display: block;
+    overflow: hidden;
     padding: 28px;
     text-align: center;
     border: 1px solid #eaedef;
