@@ -18,7 +18,10 @@ app.set('views', path.join(__dirname, './views'));
 
 //set up express handlebars
 app.set('view engine', 'pug');
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, '../public')));
+app.get('/', (req, res) => {
+    res.sendFile('index.html');
+});
 
 
 
