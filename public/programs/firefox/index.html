@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="about.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>About me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="prism.css">
+<title>Api Docs</title>
 </head>
 <body>
-<!-- HEADER -->
-  <div class="header">
-    <header>The Old Times</header>
-  <div class="subhead"></div>
-  </div>
 
-  <!-- MAIN CONTENT -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-3 col-xl-2 sidebar">
+                <nav class="nav flex-column">
+                <input class="form-control d-flex align-items-center" type="text" placeholder="Search" aria-label="Search">
+                <ul class="side-menu">
+                    <li>
+                        <a class="p-1 nav-link active" href="#">Active</a>
+                        <div class="collapse-menu" style="display:none;">
+                            <ul class="sub-menu">
+                                <li><a href="#">Submenu</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                </nav>
+            </div> 
+            <div class="d-none d-xl-block col-xl-2 bd-toc">
+                <ul class="section-nav">
+                   <li class="toc-entry toc-h2"><a href="#quick-start">Quick start</a>
+                     <ul class="toc-ul">
+                        <li class="toc-entry"><a href="#css">CSS</a></li>
+                        <li class="toc-entry"><a href="#js">JS</a></li>
+                     </ul>
+                   </li>
+                    <li class="toc-entry"><a href="#starter-template">Starter template</a></li>
+                    <li class="toc-entry"><a href="#important-globals">Important globals</a>
+                    <ul class="toc-ul">
+                        <li class="toc-entry"><a href="#html5-doctype">HTML5 doctype</a></li>
+                        <li class="toc-entry"><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+                        <li class="toc-entry"><a href="#box-sizing">Box-sizing</a></li>
+                        <li class="toc-entry"><a href="#reboot">Reboot</a></li>
+                    </ul>
+                    </li>
+                    </ul>
+            </div>
+            <main class="col-12 col-md-9 col-xl-8 contentp">
+                <h1 id="content">Introduction</h1>
+                <p>Get started with Flo's REST- API by reading the docs</p>
+                <h2>Get Started</h2>
+                <pre><code class="language-css">p { color: red }</code></pre>
 
+            <main>
+        </div>
+    </div>
 
-<div class="row">
-  <div class="col-sm-8" id="left-page"><img src="img/me.jpeg" class="img-fluid"alt="" class="src">
-    <div class="left-page" class="col-sm-8"></div>
-  </div>
-
-  <div class="col-sm-4" style="border-left: 1px solid black; margin-top: 20px;">
-    <div class="right-page"><h1>Florian S</h1><b>Augsburg, Germany</b><p class="para">I was born in Augsburg, Germany. I love coding and I'm a Nerd!</p></div>
-  </div>
-
-</div>
-
-
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src="prism.js"></script>
 </body>
-</html>
+</html> 

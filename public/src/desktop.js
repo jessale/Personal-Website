@@ -12,10 +12,11 @@ function Deskicon(id, name, iconurl){
   desktopicons.append(name);
 }
 
-const documents = new Deskicon('documents', 'MyProjects','img/folder.png')
-const mail2 = new Deskicon('mail', 'Email', 'img/mail.png')
-const test = new Deskicon('resume', 'CV.pdf', 'img/pdf.png')
-const legal = new Deskicon('legal', 'Legal.docx', 'img/word.png')
+const documents = new Deskicon('documents', 'MyProjects','img/folder.png');
+// const mail2 = new Deskicon('mail', 'Email', 'img/mail.png')
+const fire = new Deskicon('firefox', 'API docs', 'img/firefox.png');
+const test = new Deskicon('resume', 'CV.pdf', 'img/pdf.png');
+const legal = new Deskicon('legal', 'Legal.docx', 'img/word.png');
 //const cv = new Deskicon('cv', 'CV.pdf' 'img/pdf.png')
 
 /*
@@ -28,8 +29,13 @@ documents.style.background ="url(img/folder.png) center top no-repeat";
 desktopicons = document.getElementById("desktop-icons");
 desktopicons.append(documents); */
 
+$('#firefox').click(function() {
+    firefox();
+});
+
 $("#resume").click(function() {
-  window.open ("http://floshodan.io/cv", "_blank");
+  // window.open ("http://floshodan.io/cv", "_blank");
+    cv();
 });
 
 $("#legal").click(function() {

@@ -25,6 +25,73 @@ $(".tasks").append("<div id='task'><p class='task_text'><span>Game</span></p></d
 }
 var z = 0;
 
+function cv(){
+  $( function drag() {
+    $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true}).resizable();
+  } );
+
+let explorer = document.createElement("DIV");
+explorer.innerHTML = '<div class="window" id="explorer">\
+<div class="title"><div class="title-left-chrome"></div>\
+<div class=title-middle>Legal.docs - Word</div> \
+<div class="chrome-close title-right" id="closew">\
+    <a href="#"><i class="fas fa-minus"></i></a>\
+    <a href="#"><i class="far fa-window-restore"></i></a>\
+    <a id="close" ><i class="fas fa-times"></i></a>\
+</div>\
+</div> \
+       \
+<div class ="panel-right"> <hr />\
+     <iframe src="../cv/index.html" frameborder="0" width="100%" height="100%"></iframe>\
+</div> ';
+
+    $("#desktop").append(explorer);
+$(".tasks").append("<div id='task'><p class='task_text'><span>Explorer</span></p></div>");
+$( "#connectfour" ).remove();
+
+$("#close").click(function() {
+    $(this).parent().parent().parent().parent().remove();
+});
+
+//desktop = document.getElementById("desktop");
+//desktop.append(explorer);
+};
+
+
+function firefox(){
+  $( function drag() {
+    $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true}).resizable();
+  } );
+
+let explorer = document.createElement("DIV");
+explorer.innerHTML = '<div class="window" id="explorer">\
+<div class="title"><div class="title-left-chrome"></div>\
+<div class=title-middle>Legal.docs - Word</div> \
+<div class="chrome-close title-right" id="closew">\
+    <a href="#"><i class="fas fa-minus"></i></a>\
+    <a href="#"><i class="far fa-window-restore"></i></a>\
+    <a id="close" ><i class="fas fa-times"></i></a>\
+</div>\
+</div> \
+       \
+<div class ="panel-right"> <hr />\
+     <iframe src="programs/firefox/index.html" frameborder="0" width="100%" height="100%"></iframe>\
+</div> ';
+
+    $("#desktop").append(explorer);
+$(".tasks").append("<div id='task'><p class='task_text'><span>Explorer</span></p></div>");
+$( "#connectfour" ).remove();
+
+$("#close").click(function() {
+  $("#explorer").remove();
+  $("#task").remove();
+});
+
+//desktop = document.getElementById("desktop");
+//desktop.append(explorer);
+};
+
+
 function explorer(){
   $( function drag() {
     $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true}).resizable();

@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
     position: relative;
+    /* font-size: 14px; */
+	  font-family: 'Opensans', sans-serif;
+
 }
 
 @media print {
@@ -14,8 +17,10 @@
         margin: 0;
         padding: 0;
         -webkit-print-color-adjust: exact;
+	      
     } 
 }
+
 
 .header {
     color: white;

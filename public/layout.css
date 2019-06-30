@@ -98,6 +98,7 @@ iframe {
 }
 
 .icons {
+    cursor: pointer;
   position: relative;
   margin-top: 4px;
   padding: 8px;
@@ -125,16 +126,16 @@ iframe {
 }
 
 .window {
-  height:600px;
-  width:986px;
+  height:90%;
+  width: calc(100%);
+  max-width:1300px;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: 10px;
+  bottom: 10px;
   left: 0;
   border-top: 0;
-  top: 200px;
-  right: 300px;
+  /* top: 200px; */
+  /* right: 300px; */
 
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(black, 0.5), 0 1px 1px rgba(black, 0.1);
@@ -143,17 +144,24 @@ iframe {
 
 }
 
+#react_container{
+    position: absolute;
+    height: 100px;
+    width: 25px;
+    right: 5px;
+    background: black;
+}
+
 .title {
-  background-color: white;
-  cursor: move;
-  height: 30px;
   width: 100%;
-  position: absolute;
+  height: 20px;
+  background: white;
   text-align: center;
   display: table;
   table-layout: fixed;
   place-text: center;
   color: #fff;
+  cursor: move;
 }
 
 .title-word {
@@ -195,10 +203,11 @@ background: #f3f2f1;
 }
 
 .panel-left{
+  margin-top: -30px; 
   padding-top: 30px;
   float: left;
   height: 100%;
-  width: 180px;
+  min-width: 180px;
   border-right:1px solid #d6e5f5;
 
   background-color: rgba(0,0,0,0.5);
@@ -253,7 +262,6 @@ padding-left:30px;
 }
 
 .panel-right{
-  padding-top: 30px;
   background:#fcfcfc;
   display: flex;
   flex-flow: column;
@@ -293,6 +301,38 @@ padding-left:30px;
   display: table-cell;
 }
 
+.title-left-chrome {
+    height: 20px;
+    display:table-cell;
+}
+
+.title-left-chrome .tabs{
+    box-sizing: border-box;
+    position: relative;
+    font-size: 12px;
+    padding: 8px 3px 4px 3px;
+    background: #dee1e6;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    
+}
+
+.chome-tab-content {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: var(--tab-content-margin);
+    right: var(--tab-content-margin);
+    padding: 9px 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    background-color: black;
+    pointer-events: all;
+    width: 250px;
+    margin-left: 25px;
+}
 
 
 .chrome-close {
@@ -305,6 +345,7 @@ padding-left:30px;
   font-size: 11px;
   padding: 8px 24px 7px 24px;
   color: grey;
+  cursor: pointer;
 }
 
 .chrome-close a:hover:not(:last-child) {
