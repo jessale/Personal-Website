@@ -29,7 +29,15 @@ documents.style.background ="url(img/folder.png) center top no-repeat";
 desktopicons = document.getElementById("desktop-icons");
 desktopicons.append(documents); */
 
+$('#quick-term').click(function(){
+    term();
+});
+
 $('#firefox').click(function() {
+    firefox();
+});
+
+$('#quick-firefox').click(function(){
     firefox();
 });
 
