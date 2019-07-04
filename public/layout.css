@@ -57,6 +57,7 @@ iframe {
   height: 100%;
 }
 .quick-icons {
+    cursor: pointer;
   display: flex;
 
 }
@@ -122,14 +123,24 @@ iframe {
     overflow: hidden;
 }
 #draggable {
-  visibility: hidden;
+  visibility: none;
+}
+
+.window-term {
+    width: 100%;
+    position: relative;
+    max-width: 600px;
+    z-index: auto;
+
+
 }
 
 .window {
+    z-index: auto;
   height:90%;
   width: calc(100%);
   max-width:1300px;
-  position: absolute;
+  position: relative;
   top: 10px;
   bottom: 10px;
   left: 0;
@@ -150,6 +161,29 @@ iframe {
     width: 25px;
     right: 5px;
     background: black;
+}
+
+#terminal {
+    display: inline-block;
+    max-width: 600px;
+    height: 400px;
+}
+
+.terminal-output {
+    margin-top: 10px;
+}
+
+.title-term {
+    width: 100%;
+    max-width: 600px;
+    height: 25px;
+    background:	#181818;
+    text-align: center;
+    display: table;
+    table-layout: fixed;
+    place-text: center;
+    color: #fff;
+    cursor: move;
 }
 
 .title {
