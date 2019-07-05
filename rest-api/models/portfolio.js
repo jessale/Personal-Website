@@ -9,8 +9,10 @@ const portfolioSchema = mongoose.Schema({
     },
     slug: {type: String, slug : "title"},
     description: String,
+    challenge: String,
     technology: Array,
     video: String,
+    img: String,
     github: String,
     url: String
 }, {
