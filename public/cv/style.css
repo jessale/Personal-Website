@@ -70,6 +70,10 @@ img {
 ul {
 	margin-bottom: 0px;
 }
+
+.githubl {
+}
+
 li {
 	list-style: none;
 }
@@ -518,6 +522,7 @@ h5.tittle {
 	margin-bottom: 20px;
 }
 .portfolio {
+    text-align: center;
 	padding: 20px;
 	display: inline-block;
 	width: 100%;

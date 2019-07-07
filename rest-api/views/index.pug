@@ -14,35 +14,34 @@ html(lang='de')
       .portfolio-single.container-fluid
         // .row
         .row
-          .col-md-8.portfolio-field.portfolio-title
+          .col-md-8.col-sm-8.portfolio-field.portfolio-title
             h2 #{title}
-          .col-md-4.portfolio-field.portfolio-nav
+          .col-md-4.col-sm-4.portfolio-field.portfolio-nav
             a.button.back(href='index.html')
         .row
           // PORTFOLIO-IMAGES - column 8/12
           .col-md-8.portfolio-field
             .left
-              video(controls='', src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', poster='', style='width: 100%; height: 100%;')
-              .video-descript
-                a.button.primary(href='#') View on Github
+             -if(video)
+              video(controls='', src='vids/emacs.mp4', poster='', style='width: 100%; height: 100%;')
+             -if(img)
+              img(src=''+img)
+            .video-descript
+              a.button.primary(href='#') View on Github
+              a.button.primary(href='#') LAUNCH PROJECT
+
           .col-md-4.portfolio-field
             h3 Description
             p
-              | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-            p
+              | #{description} 
               | Established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-            h3 Client
-            p Apple Inc.
+            h3 Challenges 
+            p #{challenge} 
             h3 Technology
             ul.tags
+             each element in technology
               li
-                a HTML 5
-              li
-                a CSS 3
-              li
-                a jQuery
-              li
-                a NodeJS
+                a=element 
             .links
               a.button.primary(href='#') LAUNCH PROJECT
       // .portfolio-single

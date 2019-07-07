@@ -8,32 +8,35 @@
 // let desktop = document.getElementById("desktop");
 // desktop.append(terminal);
 
-function term(){
+function term(test){
     $( function drag() {
-        $( ".window-term" ).draggable({cursor: "move", handle : ".title-term", iframeFix: true}).resizable();
+        $( ".window-term" ).draggable({cursor: "move", handle : ".title-term", iframeFix: true, stack: ".window"}).resizable();
     } );
 
     let terminal = document.createElement("DIV");
-    terminal.innerHTML = '<div class="window-term">\
+
+    terminal.innerHTML = `<div class="window-term" style="z-index : ${test}">\
 <div class="title-term">\
 <div class="chrome-close title-right" id="closew">\
-    <a href="#"><i class="fas fa-minus"></i></a>\
+    <a id="minimize" onclick="minimizeWindow(this)"><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
-    <a id="close" ><i class="fas fa-times"></i></a>\
+    <a id="close" onclick="closeWindow(this, '.terms')" ><i class="fas fa-times"></i></a>\
 </div>\
 </div> \
        \
 <div class ="panel-term" id="terminal" style="overflow: hidden!important;"> <hr />\
-</div> ';
+</div> `;
+
 
     $("#desktop").append(terminal);
-    $(".tasks").append("<div id='task'><p class='task_text'><span>Terminal</span></p></div>");
+    $(".tasks").append(`<div id='task' onclick='toFront(".window-term")' class='terms'><p class='task_text'><span>Terminal</span></p></div>`);
 
-    $("#close").click(function() {
-        $("#terminal").remove();
-        $(".window-term").remove();
-        $("#task").remove();
-    })
+
+    // $("#close").click(function() {
+    //     $("#terminal").remove();
+    //     $(".window-term").remove();
+    //     $("#task").remove();
+    
 jQuery(function($, term) {
 
     $('#terminal').terminal(function(command, term) {

@@ -15,7 +15,7 @@ function Deskicon(id, name, iconurl){
 const documents = new Deskicon('documents', 'MyProjects','img/folder.png');
 // const mail2 = new Deskicon('mail', 'Email', 'img/mail.png')
 const fire = new Deskicon('firefox', 'API docs', 'img/firefox.png');
-const test = new Deskicon('resume', 'CV.pdf', 'img/pdf.png');
+const test = new Deskicon('resume', 'Resume.pdf', 'img/pdf.png');
 const legal = new Deskicon('legal', 'Legal.docx', 'img/word.png');
 //const cv = new Deskicon('cv', 'CV.pdf' 'img/pdf.png')
 
@@ -29,29 +29,47 @@ documents.style.background ="url(img/folder.png) center top no-repeat";
 desktopicons = document.getElementById("desktop-icons");
 desktopicons.append(documents); */
 
+
+
 $('#quick-term').click(function(){
-    term();
+    let i = findHighestZIndex('window');
+    term(i++);
 });
 
 $('#firefox').click(function() {
-    firefox();
+
+    let i = findHighestZIndex('window');
+    firefox(i++);
 });
 
 $('#quick-firefox').click(function(){
-    firefox();
+    let i = findHighestZIndex('window');
+    firefox(i++);
 });
 
 $("#resume").click(function() {
-  // window.open ("http://floshodan.io/cv", "_blank");
-    cv();
+    checkifexists('#cv', cv);
+});
+
+$('#cv').click(function(){
+    toFront('#cv'); 
 });
 
 $("#legal").click(function() {
-  word();
+    let i = findHighestZIndex('window');
+  word(i++);
 
 });
 
 $("#documents").click(function() {
-  explorer();
+  let i = findHighestZIndex('window');
+  explorer(i++);
 
+});
+
+$('.window').click(function (e) {
+    var inst = $(this).data('draggable');
+    inst._mouseStart(e);
+    inst._trigger('click', e);
+    inst._clear();
 });

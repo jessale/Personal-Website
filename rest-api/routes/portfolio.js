@@ -15,17 +15,38 @@ console.log(result);
 
 
 router.get('/:slug', (req, res) => {
-    Portfolio.find((err, portfolio) => {
-        if (err) {
-            console.log(err);
-        }else {
-            let result = portfolio.map(a => a.title);
-            res.render('index', {
-                title : result,
-            });
-        }
+    Promise.all([
+        Portfolio.findOne({'slug' : req.params.slug}),
+    ]).then(([portfolio]) => {
+        let videos = 0;
+        if(portfolio.img === ""){
+            console.log("Empty!");
+            videos = portfolio.video;
+        };
+        res.render('index', {
+            title: portfolio.title,
+            description: portfolio.description,
+            challenge: portfolio.challenge,
+            technology: portfolio.technology,
+            video: videos,
+            img: portfolio.img
+        }, console.log(portfolio.technology));
     });
 });
 
+//     Portfolio.find((err, portfolio) => {
+//         if (err) {
+//             console.log(err);
+//         }else {
+//             let result = portfolio.map(a => a.title);
+//             res.render('index', {
+//                 title : result,
+//                 technology: result.technology
+//             });
+//         }
+//     });
+// });
+
 
 module.exports = router;
+

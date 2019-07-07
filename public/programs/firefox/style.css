@@ -58,3 +58,18 @@ contentp {
 
 .toc-entry li a {
 }
+
+.get {
+    display: inline-block;
+    background: #9EFC9B;
+    color: black;
+}
+
+.get p {
+    margin: 5px;
+    text-transform: uppercase;
+}
+
+.language-own {
+    color: orange!important;
+}

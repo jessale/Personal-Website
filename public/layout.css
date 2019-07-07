@@ -29,6 +29,7 @@ iframe {
 }
 
 .taskbar {
+    f9 to jump to css
   background-color: black;
   position: absolute;
 	z-index: 1;
@@ -99,7 +100,8 @@ iframe {
 }
 
 .icons {
-    cursor: pointer;
+  cursor: pointer;
+  text-align: center;
   position: relative;
   margin-top: 4px;
   padding: 8px;
@@ -119,7 +121,7 @@ iframe {
     margin: 38px 0 0;
     color: #fff;
     font-weight: 300;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
     overflow: hidden;
 }
 #draggable {
@@ -127,23 +129,27 @@ iframe {
 }
 
 .window-term {
+    z-index: auto;
+    top: 40px;
     width: 100%;
     position: relative;
     max-width: 600px;
-    z-index: auto;
 
 
 }
+.ui-resizable {
+    position: absolute!important;
+}
 
 .window {
-    z-index: auto;
+  z-index: auto;
   height:90%;
-  width: calc(100%);
+  position: fixed;
+  width: calc(100%)-12%;
   max-width:1300px;
-  position: relative;
   top: 10px;
   bottom: 10px;
-  left: 0;
+  left: 135px;
   border-top: 0;
   /* top: 200px; */
   /* right: 300px; */

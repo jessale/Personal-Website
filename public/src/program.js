@@ -1,110 +1,117 @@
+function closeWindow(elem, task) {
+    $(elem).parent().parent().parent().remove();
+    $(task).remove();
+};
 
-
-function program() {
-
-  $( function drag() {
-    $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true}).resizable();
-  } );
-
-let program = document.createElement("DIV");
-
-program.innerHTML = ' <div class="window" id="connectfour">\
-            <div class="title"><div class="windowbar"><span>Hallo<span></div>\
-                <div class="chrome-close">\
-                    <a href="#"><i class="fas fa-minus"></i></a>\
-                    <a href="#"><i class="far fa-window-restore"></i></a>\
-                    <a href="#"><i class="fas fa-times"></i></a>\
-                </div>\
-            </div>\
-            <div class="panel-right"><hr />\<iframe src="programs/firefox/index.html" frameborder="0" width="100%" height="100%"></iframe>\
-        </div> ';
-desktop = document.getElementById("desktop");
-desktop.append(program);
-
-$(".tasks").append("<div id='task'><p class='task_text'><span>Game</span></p></div>");
+function minimizeWindow(elem) {
+    $(elem).parent().parent().parent().hide();
 }
-var z = 0;
 
-function cv(){
+function toFront(elem){
+    let i = findHighestZIndex('window');
+    console.log(i);
+    $(elem).css("z-index", i+2);
+    $(elem).show();
+}
+
+function checkifexists(elem, runProgram){
+    if($(elem).length){
+        toFront(elem);
+    }else{
+        let i = findHighestZIndex('window');
+        runProgram(i++);
+    }
+}
+
+
+
+function findHighestZIndex(elem)
+{
+    var elems = document.getElementsByClassName(elem);
+    var highest = 0;
+    for (var i = 0; i < elems.length; i++)
+    {
+        var zindex=document.defaultView.getComputedStyle(elems[i],null).getPropertyValue("z-index");
+        if ((zindex > highest) && (zindex != 'auto'))
+        {
+            highest = zindex;
+        }
+    }
+    return highest;
+}
+
+function cv(zindex){
   $( function drag() {
-    $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true}).resizable();
+      $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true, stack: '.window', distance: 0 }).resizable();
   } );
 
 let explorer = document.createElement("DIV");
-explorer.innerHTML = '<div class="window" id="explorer">\
+    explorer.innerHTML = `<div class="window window-cv" id="cv" style="z-index : ${zindex}">\
 <div class="title"><div class="title-left-chrome"></div>\
-<div class=title-middle>Legal.docs - Word</div> \
+<div class=title-middle>Resume.pdf - Adobe Acrobat</div> \
 <div class="chrome-close title-right" id="closew">\
-    <a href="#"><i class="fas fa-minus"></i></a>\
+    <a onclick='minimizeWindow(this)'><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
-    <a id="close" ><i class="fas fa-times"></i></a>\
+    <a id="close" onclick="closeWindow(this, '.cv_task')" ><i class="fas fa-times"></i></a>\
 </div>\
 </div> \
        \
 <div class ="panel-right"> <hr />\
      <iframe src="../cv/index.html" frameborder="0" width="100%" height="100%"></iframe>\
-</div> ';
+</div> `;
 
     $("#desktop").append(explorer);
-$(".tasks").append("<div id='task'><p class='task_text'><span>Explorer</span></p></div>");
-$( "#connectfour" ).remove();
+    $(".tasks").append(`<div id='task' onclick='toFront(".window-cv")' class='cv_task'><p class='task_text'><span>Resume.pdf</span></p></div>`);
 
-$("#close").click(function() {
-    $(this).parent().parent().parent().parent().remove();
-});
+// $("#close").click(function() {
+//     $(this).parent().parent().parent().parent().remove();
+// });
 
 //desktop = document.getElementById("desktop");
 //desktop.append(explorer);
 };
 
 
-function firefox(){
+function firefox(zindex){
   $( function drag() {
-    $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true}).resizable();
+      $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true, stack: '.window', distance: 0}).resizable();
   } );
 
 let explorer = document.createElement("DIV");
-explorer.innerHTML = '<div class="window" id="explorer">\
+explorer.innerHTML = `<div class="window" id="firefoxw" style="z-index: ${zindex}">\
 <div class="title"><div class="title-left-chrome"></div>\
 <div class=title-middle>Legal.docs - Word</div> \
 <div class="chrome-close title-right" id="closew">\
     <a href="#"><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
-    <a id="close" ><i class="fas fa-times"></i></a>\
+    <a id="close" onclick="closeWindow(this)" ><i class="fas fa-times"></i></a>\
 </div>\
 </div> \
        \
 <div class ="panel-right"> <hr />\
      <iframe src="programs/firefox/index.html" frameborder="0" width="100%" height="100%"></iframe>\
-</div> ';
+</div> `;
 
     $("#desktop").append(explorer);
-$(".tasks").append("<div id='task'><p class='task_text'><span>Explorer</span></p></div>");
-$( "#connectfour" ).remove();
+$(".tasks").append("<div id='task' class='fire'><p class='task_text'><span>Firefox</span></p></div>");
 
-$("#close").click(function() {
-  $("#explorer").remove();
-  $("#task").remove();
-});
 
-//desktop = document.getElementById("desktop");
-//desktop.append(explorer);
 };
 
 
-function explorer(){
+function explorer(zindex){
   $( function drag() {
-    $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true}).resizable();
+      $( ".window" ).draggable({cursor: "move", handle : ".title", iframeFix: true, stack: '.window', distance: 0}).resizable();
   } );
 
 let explorer = document.createElement("DIV");
-explorer.innerHTML = '<div class="window" id="explorer">\
+explorer.innerHTML = `<div class="window" id="explorer" style="z-index: ${zindex}">\
 <div class="title"><div class="title-left"></div>\
 <div class=title-middle>Legal.docs - Word</div> \
 <div class="chrome-close title-right" id="closew">\
     <a href="#"><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
-    <a id="close" ><i class="fas fa-times"></i></a>\
+    <a id="close" onclick="closeWindow(this)" ><i class="fas fa-times"></i></a>\
 </div>\
 </div> \
 <div class="panel-left blurred-bg"> \
@@ -125,24 +132,15 @@ explorer.innerHTML = '<div class="window" id="explorer">\
        \
 <div class ="panel-right"> <hr />\
      <iframe src="programs/projects/index.html" frameborder="0" width="100%" height="100%"></iframe>\
-</div> '
+</div> `
 
-$("#desktop").append(explorer)
+    $("#desktop").append(explorer);
 $(".tasks").append("<div id='task'><p class='task_text'><span>Explorer</span></p></div>");
-$( "#connectfour" ).remove();
-
-$("#close").click(function() {
-  $("#explorer").remove();
-  $("#task").remove();
-});
-
-//desktop = document.getElementById("desktop");
-//desktop.append(explorer);
 };
 
 function word(){
   $( function drag() {word
-    $( ".window" ).draggable({cursor: "move", handle : ".title-word", iframeFix: true}).resizable();
+                      $( ".window" ).draggable({cursor: "move", handle : ".title-word", iframeFix: true, stack: '.window', distance: 0}).resizable();
   } );
 
 let word = document.createElement("DIV");
@@ -152,7 +150,7 @@ word.innerHTML = '<div class="window" id="word">\
 <div class="chrome-close title-right" id="closew">\
     <a href="#"><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
-    <a id="close" ><i class="fas fa-times"></i></a>\
+    <a id="close" onclick="closeWindow(this)" ><i class="fas fa-times"></i></a>\
 </div>\
 </div> \
 <div class="menu-bar"><div class="menu-bar">\
@@ -170,17 +168,10 @@ word.innerHTML = '<div class="window" id="word">\
 </div> \
 <div class ="panel-right">\
      <iframe src="programs/legal/index.html" frameborder="0" width="100%" height="100%"></iframe>\
-</div> '
+</div> ';
 
-$("#desktop").append(word)
+    $("#desktop").append(word);
 $(".tasks").append("<div id='task'><p class='task_text'><span>Word</span></p></div>");
-$( "#connectfour" ).remove();
 
-$("#close").click(function() {
-  $("#word").remove();
-  $("#task").remove();
-});
 
-//desktop = document.getElementById("desktop");
-//desktop.append(explorer);
 };

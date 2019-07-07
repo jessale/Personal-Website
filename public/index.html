@@ -6,8 +6,9 @@
 		<link href="layout.css" rel="stylesheet" type="text/css">
     <link href="lib/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://unpkg.com/jquery.terminal@1.x.x/css/jquery.terminal.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.6.3/css/jquery.terminal.min.css" rel="stylesheet"/>
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
 	</head>
 	<body>
 		<div class="desktop" id ="desktop">
@@ -20,9 +21,8 @@
 			</button>
       <div class="quick">
         <div class="quick-icons">
-          <img src="img/desktop.png" alt="show desktop" title="show Desktop" class="quick-icon" width="24" height="24">
-          <img src="img/firefox.png" alt="" title="Firefox" class="quick-icon" width="24" height="24">
-          <img src="img/terminal.png" alt="" title="Terminal" class="quick-icon" width="24" height="24">
+          <img src="img/firefox.png" id="quick-firefox" alt="" title="Firefox" class="quick-icon" width="24" height="24">
+          <img src="img/terminal.png" id="quick-term" alt="" title="Terminal" class="quick-icon" width="24" height="24">
         </div>
       </div>
 			<div class="tasks"></div>
@@ -91,14 +91,21 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="lib/jquery-ui.min.js" charset="utf-8"></script>
-    <script src="src/widget.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <script src="https://unpkg.com/js-polyfills/keyboard.js"></script>
+    <script src="https://cdn.terminal.jcubic.pl/wcwidth.js"></script>
+    <!-- <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"</script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <script type="text/babel" src="React/App.js"></script>
     <script src="src/desktop.js" charset="utf-8"></script>
 		<script src="src/time.js"></script>
     <script src="src/calender.js"></script>
     <script src="src/program.js" charset="utf-8"></script>
     <script src="src/startmenu.js" charset="utf-8"></script>
 		<script src="src/terminal.js" charset="utf-8"></script>
-		<script src="https://unpkg.com/jquery.terminal@1.x.x/js/jquery.terminal.min.js"></script>
+    <script src="src/window.js"></script>
 
+    <script>
+    </script>
 	</body>
 </html>

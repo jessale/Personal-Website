@@ -176,6 +176,7 @@
 }
 
 a.button {
+    margin-left: 10px;
     display: inline-block;
     position: relative;
     padding: 1.3em 2.6em;

@@ -18,16 +18,54 @@
                 <input class="form-control d-flex align-items-center" type="text" placeholder="Search" aria-label="Search">
                 <ul class="side-menu">
                     <li>
-                        <a class="p-1 nav-link active" href="#">Active</a>
-                        <div class="collapse-menu" style="display:none;">
+                        <a class="p-1 nav-link active"  href="#">Active</a>
+                        <div class="collapse-menu" style="display:block;">
                             <ul class="sub-menu">
                                 <li><a href="#">Submenu</a></li>
                             </ul>
                         </div>
                     </li>
+                    <li>
+                    <a class="p-1 nav-link"  href="#">Active</a>
+                    <div class="collapse-menu" style="display:none;">
+                        <ul class="sub-menu">
+                            <li><a href="#">Submenu</a></li>
+                            </ul>
+                            </div>
+                    </li>
+                        <li>
+                            <a class="p-1 nav-link" href="#">Active</a>
+                            <div class="collapse-menu" style="display:none;">
+                                <ul class="sub-menu">
+                                    <li><a href="#">Submenu</a></li>
+                                </ul>
+                            </div>
+                            </li>
+
                 </ul>
                 </nav>
             </div> 
+            <script>
+             
+                let extend = document.getElementsByClassName('nav-link');
+                let active = []
+                    for(let i = 0; i< extend.length; i++){
+                        extend[i].addEventListener("click", function() {
+                           active = document.getElementsByClassName('nav-link active');
+                           console.log(active);
+                           for(let j=0; j<active.length;j++){
+                               active[j].classList.remove('active');
+                           }
+                        this.classList.add('active'); 
+                        let content = this.nextElementSibling;
+                        if(content.style.display === "block"){
+                            content.style.display = "none"
+                        }else {
+                            content.style.display = "block";
+                        }
+                    });
+                    }
+            </script>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                 <ul class="section-nav">
                    <li class="toc-entry toc-h2"><a href="#quick-start">Quick start</a>
@@ -49,9 +87,102 @@
             </div>
             <main class="col-12 col-md-9 col-xl-8 contentp">
                 <h1 id="content">Introduction</h1>
-                <p>Get started with Flo's REST- API by reading the docs</p>
-                <h2>Get Started</h2>
-                <pre><code class="language-css">p { color: red }</code></pre>
+                <p>Yes! You heard right this website has a public API. It can be used to receive personal data from the owner of this website as well as serverinformation from the server this webapplication is hosted. The documantion has some example code in different languages so its easy understandble for every developer. Enjoy! </p>
+                <h2>Get started</h2>
+                <h6>Data Endpoint</h6> 
+                <div class="get">
+                    <p>get</p> 
+                </div>
+                <pre><code class="language-own">http://floshodan.io/api/about</code></pre>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#curl">Curl</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#nodejs">NodeJS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#python">Python</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="curl" class="container-fluid tab-pane active">
+        <pre><code class="language-shell">curl http://floshodan.io/api/about | jq '.'</code></pre>
+    </div>
+    <div id="nodejs" class="container-fluid tab-pane fade">
+        <pre><code class="language-javascript">const https = require('http');
+
+https.get('http://floshodan.io/api/about', (resp) => {
+  let data = '';
+
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  resp.on('end', () => {
+    console.log(JSON.parse(data).explanation);
+  });
+
+  // Handle error
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});</code></pre>
+    </div>
+    <div id="python" class="container-fluid tab-pane fade">
+        <pre><code class="language-python">import requests
+
+response = requests.get('http://floshodan.io/api/about')
+json_response = response.json()
+print(json_response)
+
+        </code></pre>
+
+    </div>
+  </div> 
+                <div class="table-responsive">
+              <table class="table-bordered">
+                <thead class="black">
+                  <tr>
+                    <th>Field Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a name="contactName"></a>name</td>
+                      <td><code>string</code></td>
+                      <td>The identifying name of the contact person/organization.</td>
+                   </tr>
+                    <tr>
+                     <td><a name="contactUrl"></a>url</td>
+                     <td><code>string</code></td>
+                     <td>The URL pointing to the contact information. MUST be in the format of a URL.</td>
+                    </tr>
+                     <tr>
+                       <td><a name="contactEmail"></a>email</td>
+                       <td><code>string</code></td>
+                       <td>The email address of the contact person/organization. MUST be in the format of an email address.</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <pre><code class="language-json"> [
+    {
+        "firstname": "Florian",
+        "lastname": "Schneller",
+        "age": 25,
+        "weight": 65.3,
+        "height": 163,
+        "birthday": "1993-09-02",
+        "location": "127.0.0.1",
+        "email": "code@floshodan.io",
+        "pgp": "3821388123882382188123821833812",
+        "status": "Looking for Job",
+        "online": true
+    }
+]</code></pre>
+                </div>
 
             <main>
         </div>
