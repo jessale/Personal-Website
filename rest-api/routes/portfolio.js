@@ -13,6 +13,10 @@ let object = [{
 let result = object.map(a => a.title);
 console.log(result);
 
+router.get('/', (req, res) => {
+    
+});
+
 
 router.get('/:slug', (req, res) => {
     Promise.all([

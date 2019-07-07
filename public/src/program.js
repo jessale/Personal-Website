@@ -63,12 +63,6 @@ let explorer = document.createElement("DIV");
     $("#desktop").append(explorer);
     $(".tasks").append(`<div id='task' onclick='toFront(".window-cv")' class='cv_task'><p class='task_text'><span>Resume.pdf</span></p></div>`);
 
-// $("#close").click(function() {
-//     $(this).parent().parent().parent().parent().remove();
-// });
-
-//desktop = document.getElementById("desktop");
-//desktop.append(explorer);
 };
 
 
@@ -78,13 +72,13 @@ function firefox(zindex){
   } );
 
 let explorer = document.createElement("DIV");
-explorer.innerHTML = `<div class="window" id="firefoxw" style="z-index: ${zindex}">\
+explorer.innerHTML = `<div class="window window-firefox" id="firefoxw" style="z-index: ${zindex}">\
 <div class="title"><div class="title-left-chrome"></div>\
 <div class=title-middle>Legal.docs - Word</div> \
 <div class="chrome-close title-right" id="closew">\
-    <a href="#"><i class="fas fa-minus"></i></a>\
+    <a onclick='minimizeWindow(this)'><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
-    <a id="close" onclick="closeWindow(this)" ><i class="fas fa-times"></i></a>\
+    <a id="close" onclick="closeWindow(this, '.firefox_task')" ><i class="fas fa-times"></i></a>\
 </div>\
 </div> \
        \
@@ -93,8 +87,7 @@ explorer.innerHTML = `<div class="window" id="firefoxw" style="z-index: ${zindex
 </div> `;
 
     $("#desktop").append(explorer);
-$(".tasks").append("<div id='task' class='fire'><p class='task_text'><span>Firefox</span></p></div>");
-
+$(".tasks").append(`<div id='task' onclick='toFront(".window-firefox")' class="firefox_task"><p class='task_text'><span>Firefox</span></p></div>`);
 
 };
 
@@ -105,13 +98,13 @@ function explorer(zindex){
   } );
 
 let explorer = document.createElement("DIV");
-explorer.innerHTML = `<div class="window" id="explorer" style="z-index: ${zindex}">\
+explorer.innerHTML = `<div class="window window-explorer" id="explorer" style="z-index: ${zindex}">\
 <div class="title"><div class="title-left"></div>\
 <div class=title-middle>Legal.docs - Word</div> \
 <div class="chrome-close title-right" id="closew">\
-    <a href="#"><i class="fas fa-minus"></i></a>\
+    <a onclick='minimizeWindow(this)'><i class="fas fa-minus"></i></a>\
     <a href="#"><i class="far fa-window-restore"></i></a>\
-    <a id="close" onclick="closeWindow(this)" ><i class="fas fa-times"></i></a>\
+    <a id="close" onclick="closeWindow(this, '.explorer_task')"><i class="fas fa-times"></i></a>\
 </div>\
 </div> \
 <div class="panel-left blurred-bg"> \
@@ -135,7 +128,7 @@ explorer.innerHTML = `<div class="window" id="explorer" style="z-index: ${zindex
 </div> `
 
     $("#desktop").append(explorer);
-$(".tasks").append("<div id='task'><p class='task_text'><span>Explorer</span></p></div>");
+$(".tasks").append(`<div id='task' onclick='toFront(".window-explorer")' class='explorer_task'><p class='task_text'><span>Explorer</span></p></div>`);
 };
 
 function word(){

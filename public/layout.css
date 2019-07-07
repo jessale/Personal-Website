@@ -96,7 +96,14 @@ iframe {
   flex: 1;
 }
 .desktop-icons {
-  margin-left: 50px;
+  margin-left: 30px;
+}
+
+.desktop-icons-bottom {
+    position: absolute;
+    right: 40px;
+    bottom: 50px;
+    display: inherit;
 }
 
 .icons {
@@ -311,6 +318,7 @@ padding-left:30px;
 
 
 #task {
+  cursor: pointer;
   display: flex;
   background-color: grey;
   opacity: 0.5;
@@ -321,7 +329,7 @@ padding-left:30px;
 }
 
 #task .task_text {
-  cursor: default;
+  cursor: pointer;
   font-size: 15px;
   position: relative;
   margin: 5px 0 0;
