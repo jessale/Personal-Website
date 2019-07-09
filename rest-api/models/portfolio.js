@@ -7,7 +7,7 @@ const portfolioSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    slug: {type: String, slug : "title"},
+    slug:  String,
     description: String,
     challenge: String,
     technology: Array,

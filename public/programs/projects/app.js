@@ -12,7 +12,7 @@ function Projekt(id, url, name, description, i) {
         <a href="project${this.i}"><img src="${this.url}" alt="${this.name}" style="width:100%">
     <div class="middle">
        <div class="text">
-<i class="fas fa-eye"></i>
+Info
         </div>
       </div>
         </a>
@@ -31,8 +31,6 @@ const userAction = (async () => {
     const myJson = await response.json(); 
 
     let length = myJson.length;
-    console.log(length);
-    console.log(myJson);
     myJson.forEach((project, i) => {
         new Projekt(project.categorie, project.previewimg, project.projectname, project.describtion, i+1);
     });

@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 const Portfolio = require('../models/portfolio.js');
+const Projects = require('../models/projects.js');
 
 
 let object = [{
@@ -10,11 +11,15 @@ let object = [{
               description: 'testdescription'
 }];
 
-let result = object.map(a => a.title);
-console.log(result);
 
 router.get('/', (req, res) => {
-    
+    Promise.all([
+        Projects.find() 
+    ]).then(([projects]) => {
+        res.render('projects', {
+            projects : projects
+        });
+    });
 });
 
 

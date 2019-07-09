@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 
 const projectsSchema = mongoose.Schema({
     projectname : String,
-    describtion : String,
+    description : String,
     categorie : String,
     previewimg : String,
-    url: String,
-    date: String
+    date: String,
+    slug: String,
+    order: Number
     }, {
     versionKey: false,
     collection : 'projects'
