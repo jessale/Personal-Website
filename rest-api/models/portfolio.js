@@ -11,6 +11,7 @@ const portfolioSchema = mongoose.Schema({
     description: String,
     challenge: String,
     technology: Array,
+    features: Array,
     video: String,
     img: String,
     github: String,

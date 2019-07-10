@@ -36,7 +36,9 @@ router.get('/:slug', (req, res) => {
             title: portfolio.title,
             description: portfolio.description,
             challenge: portfolio.challenge,
+            features: portfolio.features,
             technology: portfolio.technology,
+            url: portfolio.url,
             video: videos,
             img: portfolio.img
         }, console.log(portfolio.technology));

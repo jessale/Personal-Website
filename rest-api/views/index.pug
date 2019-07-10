@@ -17,33 +17,37 @@ html(lang='de')
           .col-md-8.col-sm-8.portfolio-field.portfolio-title
             h2 #{title}
           .col-md-4.col-sm-4.portfolio-field.portfolio-nav
-            a.button.back(href='index.html')
+            a.button.back(href='/programs/projects/')
         .row
           // PORTFOLIO-IMAGES - column 8/12
           .col-md-8.portfolio-field
             .left
              -if(video)
-              video(controls='', src='vids/emacs.mp4', poster='', style='width: 100%; height: 100%;')
+              video(controls='', src=''+video, poster='', style='width: 100%; height: 100%;')
              -if(img)
               img(src=''+img)
             .video-descript
-              a.button.primary(href='#') View on Github
-              a.button.primary(href='#') LAUNCH PROJECT
+              a.button.primary(href=''+github) View on Github
+            -if(url)
+              a.button.primary(href=''+url) LAUNCH PROJECT
 
           .col-md-4.portfolio-field
             h3 Description
             p
-              | #{description} 
-              | Established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-            h3 Challenges 
-            p #{challenge} 
+              | #{description}
+            -if(challenge)
+             h3 Challenges
+             p #{challenge}
+            h3 Notable Features
+            ul.features
+              each element in features
+                li
+                  a=element
             h3 Technology
             ul.tags
              each element in technology
               li
                 a=element 
-            .links
-              a.button.primary(href='#') LAUNCH PROJECT
       // .portfolio-single
       // InstanceEndEditable
       // WRAPPER
