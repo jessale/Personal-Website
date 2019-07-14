@@ -27,7 +27,7 @@ function Projekt(id, url, name, description, i) {
 
 // Make GET Request 
 const userAction = (async () => {
-    const response = await fetch('http://localhost:3000/api/projects');
+    const response = await fetch('/api/projects');
     const myJson = await response.json(); 
 
     let length = myJson.length;

@@ -69,7 +69,7 @@ $("#legal").click(function() {
 });
 
 $("#documents").click(function() {
-    checkifexists('#explorer', explorer());
+    checkifexists('#explorer', explorer);
 
 });
 

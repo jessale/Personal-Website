@@ -175,6 +175,7 @@
 }
 
 a.button {
+    margin-top: 5px;
     margin-left: 10px;
     display: inline-block;
     position: relative;
@@ -213,6 +214,28 @@ a.button {
     color: #6A7686;
     border-radius: 0 2px 2px 0;
 }
+
+.more{
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.left img {
+    max-width: 100%;
+    max-height: 98%;
+}
+
+.moregh {
+    margin:auto;
+}
+
+.moregh a{
+
+    color: #cecece;
+}
+
 
 .tags li {
     display: inline-block;

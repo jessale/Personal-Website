@@ -115,16 +115,18 @@ explorer.innerHTML = `<div class="window window-explorer" id="explorer" style="z
        <li><a href="#"><i class="fas fa-clock"></i> Recent</a></li>\
        </ul>\
          <ul>\
-           <li><a href="#"><i class="fa fa-desktop"></i> Desktop</a></li>\
-           <li><a href="#"><i class="fa fa-download"></i> Downloads</a>\
-           <ul>Test</ul></li>\
+           <li><a href="#"><i class="fas fa-code"></i> Code</a></li>\
+<ul style="padding-left: 5px">  \
+<li><a href="#"><i class="fab fa-js"></i> Javascript</a></li>  \
+<li><a href="#"><i class="fab fa-python"></i> Python</a></li>  \
+</ul> \
            \
          </ul>\
        </li>\
      </ul></div> \
        \
 <div class ="panel-right"> <hr />\
-     <iframe src="programs/projects/index.html" frameborder="0" width="100%" height="100%"></iframe>\
+     <iframe src="programs/projects/" frameborder="0" width="100%" height="100%"></iframe>\
 </div> `
 
     $("#desktop").append(explorer);

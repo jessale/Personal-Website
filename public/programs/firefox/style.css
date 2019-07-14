@@ -1,8 +1,5 @@
 .bd-toc {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 4rem;
-    height: calc(100vh - 4rem);
+        height: calc(100vh - 4rem);
     overflow-y: auto;
     order: 2;
     margin-top: 1.5rem;
@@ -23,15 +20,23 @@
     padding: 0;
 }
 
+.side-menu a {
+}
+
 contentp {
     order:1 ;
     padding-top: 5px;
 }
 
 .section-nav {
+    position: fixed;
     padding-left: 0;
     border-left: 1px solid #eee;
     list-style:none;
+}
+
+.sub-menu {
+    list-style: none;
 }
 
 .toc-ul {

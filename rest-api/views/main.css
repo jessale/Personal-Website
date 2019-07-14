@@ -109,6 +109,12 @@
     border-top: 0;
 }
 
+.more{
+    background-color: black;
+    height: 100px;
+    width: 100%;
+}
+
 .descriptbox h3 {
     text-transform: uppercase;
     padding: 0;

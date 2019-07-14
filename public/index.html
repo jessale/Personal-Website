@@ -8,12 +8,22 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.6.3/css/jquery.terminal.min.css" rel="stylesheet"/>
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="desktop" id ="desktop">
+     <div class="wrapper-loader">
+        <div class='loader'>
+          <div class='circle'></div>
+          <div class='circle'></div>
+          <div class='circle'></div>
+          <div class='circle'></div>
+          <div class='circle'></div>
+        </div>
+        <div></div>
+      </div>
+   	<div class="desktop" id ="desktop">
       <div class="desktop-icons" id="desktop-icons" style="display:block;"></div>
-      <div id="react_container"></div>
+      <div id="react_container" class="blurred-bg"></div>
       <div class="desktop-icons-bottom" id="desktop-icons-bottom"></div>
     </div>
 		<div class="taskbar">
@@ -83,9 +93,8 @@
 		        </div>
 		    </div>
 
-			</div>
-			</div>
-		</div>
+        
+
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -107,6 +116,12 @@
     <script src="src/window.js"></script>
 
     <script>
+     $(window).on("load", function(){
+         setTimeout(function(){
+         $(".wrapper-loader").fadeOut("slow"); 
+         }, 2000);
+     });
+
     </script>
 	</body>
 </html>

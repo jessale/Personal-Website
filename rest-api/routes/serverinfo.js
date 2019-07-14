@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const os = require('os');
 const { execSync} = require('child_process');
+const process = require('process');
 
 const serverinfo = [];
 
@@ -16,10 +17,12 @@ const serverinfo = [];
     // console.log(cpus);
     // console.log(typeof(cpus));
     let test = execSync('uname -a');
-    serverinfo.push({ test : `${test}`});
-    console.log(test);
 
-    serverinfo.push({mem : `${os.totalmem()}`});
+    const used = Math.floor(execSync("free | grep Mem | awk '{print $3/$2 * 100.0}'"));
+    console.log(used);
+    serverinfo.push({ test : `${test}`});
+
+    serverinfo.push({mem : `${used}`});
     serverinfo.push({cpu : `${cpus['0']["model"]}`});
 })();
 
