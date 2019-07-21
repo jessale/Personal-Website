@@ -9,7 +9,6 @@ const aboutRoute = require('./routes/about.js');
 const serverRoute = require('./routes/serverinfo.js');
 const projectsRoute = require('./routes/projects.js');
 const portfolioRoute = require('./routes/portfolio.js');
-const exphbs = require('express-handlebars');
 
 mongoose.connect('mongodb://localhost:27017/info', {useNewUrlParser : true});
 
