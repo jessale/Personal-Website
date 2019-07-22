@@ -23,7 +23,7 @@ const fire = new Deskicon('firefox', 'API docs', 'img/firefox.png', '1');
 const test = new Deskicon('resume', 'Resume.pdf', 'img/pdf.png', '1');
 const legal = new Deskicon('legal', 'Legal.docx', 'img/word.png', '1');
 const github = new Deskicon('github', 'GitHub', 'img/github.png', '0');
-const mail2 = new Deskicon('mail', 'Email', 'img/mail.png', '0')
+const mail2 = new Deskicon('mail', 'Email', 'img/mail.png', '0');
 //const cv = new Deskicon('cv', 'CV.pdf' 'img/pdf.png')
 
 /*
