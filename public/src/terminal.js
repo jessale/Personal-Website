@@ -8,7 +8,8 @@
 // let desktop = document.getElementById("desktop");
 // desktop.append(terminal);
 
-function term(test){
+function term(test, startup){
+    console.log(startup);
     $( function drag() {
         $( ".window-term" ).draggable({cursor: "move", handle : ".title-term", iframeFix: true, stack: ".window"}).resizable();
     } );
@@ -36,9 +37,19 @@ function term(test){
     //     $("#terminal").remove();
     //     $(".window-term").remove();
     //     $("#task").remove();
-    
 jQuery(function($, term) {
 
+    if(startup){
+        $('#terminal').terminal(function(term){},
+            {
+            prompt: 'test@floshodan.io:~$ ',
+            greetings: "floshodan.io console: Version 0.1.0-beta" +
+                "\n" + "Copyright (c) 2019 floshodan.io" +
+                "\n\n" +
+                "Welcome guest. Type " + `help` + " to get a list of commands" +"\n\n",
+                width: 650,});
+    }
+    else{
     $('#terminal').terminal(function(command, term) {
  commands = command.split(/[ ]+/);
 
@@ -63,7 +74,7 @@ jQuery(function($, term) {
             default: 
                 term.echo("unknown command " + command);
             }
-        }
+    }
       , {
         prompt: 'guest@floshodan.io:~$ ',
         greetings: "floshodan.io console: Version 0.1.0-beta" +
@@ -72,7 +83,7 @@ jQuery(function($, term) {
             "Welcome guest. Type " + `help` + " to get a list of commands" +"\n\n",
         width: 650,
     });
+    } //else
 });
 
-
-    ;};
+        ;};
