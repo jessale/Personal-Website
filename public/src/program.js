@@ -23,7 +23,11 @@ function checkifexists(elem, runProgram){
     }
 }
 
+(function createStartupTerm (){
+    let startup = true;
+    term(1, startup);
 
+}());
 
 function findHighestZIndex(elem)
 {
