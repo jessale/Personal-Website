@@ -18,7 +18,13 @@ function checkifexists(elem, runProgram){
     if($(elem).length){
         toFront(elem);
     }else{
-        let i = findHighestZIndex('window');
+        let i;
+        if($(".window-term".length)){
+            i = 1;
+        }
+        else{
+        i = findHighestZIndex('window');
+        }
         runProgram(i++);
     }
 }
