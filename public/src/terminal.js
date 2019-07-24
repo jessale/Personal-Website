@@ -40,7 +40,7 @@ function term(test, startup){
     function typeConsole(){
 
         var options = {
-            strings: ["<i>First</i> sentence.", "<h1>Welcome!</h1><br>My name is Flo I'm a GNU/Linux Admin and Developer from Augsburg, Germany. <br>I enjoy solving challenging problems, learning new things and programming<br><br>Find out more about me: <ul class='terminal-ul'><li onclick=checkifexists('#explorer',explorer);>Projects</li><li>Resume</li></ul>Or type 'help' into the command prompt for more info<br><br>"],
+            strings: ["<i>First</i> sentence.", "<h1>Welcome!</h1><br>My name is <span style='color:red;'>Flo</span>. I'm a GNU/Linux Admin and Developer from Augsburg, Germany. <br>I enjoy solving challenging problems, learning new things and programming.<br><br>Find out more about me: <ul class='terminal-ul'><li onclick=checkifexists('#explorer',explorer);>Projects</li><li onclick=checkifexists('#cv',cv)>Resume</li></ul>Or type <span style='color:red;'>'help'</span> into the command prompt for more info<br><br>"],
             typeSpeed: 10,
         };
 
@@ -54,21 +54,18 @@ function term(test, startup){
             $(".cursor-line").fadeIn();
         }
 
-
     }
 
 jQuery(function($, term) {
 
 
-
-
     option = {
         // onInit: '',
-        prompt: 'guest@floshodan.io ~:',
+        prompt: "guest@floshodan.io ~:",
         greetings: "floshodan.io console: Version 0.1.0-beta" +
             "\n" + "Copyright (c) 2019 floshodan.io" +
             "\n\n" +
-            "Welcome guest. Type " + `help` + " to get a list of commands" +"\n\n",
+            "Welcome guest. Type <span style='color:red;'>'help'</span>" + " to get a list of commands" +"\n\n",
         width: 650,
     };
 
