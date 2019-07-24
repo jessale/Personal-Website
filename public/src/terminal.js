@@ -37,20 +37,48 @@ function term(test, startup){
     //     $("#terminal").remove();
     //     $(".window-term").remove();
     //     $("#task").remove();
+    function typeConsole(){
+
+        var options = {
+            strings: ["<i>First</i> sentence.", "<h1>Welcome!</h1><br>My name is Flo I'm a GNU/Linux Admin and Developer from Augsburg, Germany. <br>I enjoy solving challenging problems, learning new things and programming<br><br>Find out more about me: <ul class='terminal-ul'><li onclick=checkifexists('#explorer',explorer);>Projects</li><li>Resume</li></ul>Or type 'help' into the command prompt for more info<br><br>"],
+            typeSpeed: 10,
+        };
+
+        var typed = new Typed(".terminal-output" , options);
+
+        // set Timeout because async doesn't work? 
+        setTimeout(showCursor, 6000);
+
+        function showCursor(){
+            $(".prompt").fadeIn();
+            $(".cursor-line").fadeIn();
+        }
+
+
+    }
+
 jQuery(function($, term) {
 
+
+
+
+    option = {
+        // onInit: '',
+        prompt: 'guest@floshodan.io ~:',
+        greetings: "floshodan.io console: Version 0.1.0-beta" +
+            "\n" + "Copyright (c) 2019 floshodan.io" +
+            "\n\n" +
+            "Welcome guest. Type " + `help` + " to get a list of commands" +"\n\n",
+        width: 650,
+    };
+
     if(startup){
-        $('#terminal').terminal(function(term){},
-            {
-            prompt: 'test@floshodan.io:~$ ',
-            greetings: "floshodan.io console: Version 0.1.0-beta" +
-                "\n" + "Copyright (c) 2019 floshodan.io" +
-                "\n\n" +
-                "Welcome guest. Type " + `help` + " to get a list of commands" +"\n\n",
-                width: 650,});
+        option.greetings = '';
     }
-    else{
-    $('#terminal').terminal(function(command, term) {
+
+        $('#terminal').terminal(function(command, term) {
+
+
  commands = command.split(/[ ]+/);
 
         switch(commands[0]) {
@@ -75,15 +103,16 @@ jQuery(function($, term) {
                 term.echo("unknown command " + command);
             }
     }
-      , {
-        prompt: 'guest@floshodan.io:~$ ',
-        greetings: "floshodan.io console: Version 0.1.0-beta" +
-            "\n" + "Copyright (c) 2019 floshodan.io" +
-            "\n\n" +
-            "Welcome guest. Type " + `help` + " to get a list of commands" +"\n\n",
-        width: 650,
-    });
-    } //else
-});
+      , option );
+
+    if(startup){
+        $(".cursor-line").hide();
+        $(".prompt").hide(); 
+        typeConsole();
+        // console.log(option);
+
+            };
+
+        });
 
         ;};
