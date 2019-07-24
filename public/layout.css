@@ -308,6 +308,14 @@ iframe {
     height: 400px;
 }
 
+.terminal-output{
+    white-space: pre;
+}
+
+.typed-cursor{
+    display: none;
+}
+
 .terminal-output {
     margin-top: 10px;
 }
