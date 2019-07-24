@@ -306,6 +306,21 @@ iframe {
     display: inline-block;
     max-width: 600px;
     height: 400px;
+    font-size: 12;
+}
+
+.terminal-output, .cmd, .prompt {
+    /* font-size: 14px !important; */
+}
+
+.terminal-ul li {
+    color: orange;
+    cursor: pointer;
+
+}
+
+.terminal-ul li:hover {
+    text-decoration: underline;
 }
 
 .terminal-output{
