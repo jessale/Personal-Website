@@ -45,8 +45,9 @@ $('#mail').click(function(){
 });
 
 $('#quick-term').click(function(){
-    let i = findHighestZIndex('window');
-    term(i++);
+    checkifexists('#terminal', term);
+    // let i = findHighestZIndex('window');
+    // term(i++);
 });
 
 $('#firefox').click(function() {
@@ -67,6 +68,7 @@ $("#legal").click(function() {
   word(i++);
 
 });
+
 
 $("#documents").click(function() {
     checkifexists('#explorer', explorer);
