@@ -35,6 +35,7 @@ app.use(cors());
 app.use('/api/about', aboutRoute);
 app.use('/api/serverinfo', serverRoute);
 app.use('/api/projects', projectsRoute);
+// app.use('/blog', express.static(path.join(__dirname, '../blog')));
 
 //template routes
 app.use('/programs/projects', portfolioRoute);
