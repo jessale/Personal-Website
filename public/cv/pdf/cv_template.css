@@ -1,0 +1,271 @@
+
+.page {
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* font-size: 14px; */
+	  font-family: 'Opensans', sans-serif;
+
+}
+
+@media print {
+    body{
+        width: 21cm;
+        height: 29.7cm;
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+	      
+    } 
+}
+
+
+.header {
+    color: white;
+    position: absolute;
+    height: 200px;
+    background:  rgba(10, 33, 46, 1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.right-header {
+    height: 200px;
+    background: 
+    /* linear-gradient( */
+    /*     rgba(10, 33, 46, 0.8), */
+    /*     rgba(10, 33, 46, 0.8) */
+    /* ), */
+    url(file:///home/i3/Pictures/application/679A6709.png);
+    background-size: cover;
+}
+
+.header h1 {
+    text-transform: uppercase;
+}
+.header h3 {
+    margin-top: -20px;
+    font-weight: 300;
+    font-size: 15px;
+    color: grey;
+}
+
+
+.main {
+    top: 200px;
+    position: absolute;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.column-foot {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    flex: 1;
+    justify-content: center;
+
+}
+
+.double-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+}
+
+.column-left {
+    height: 100px;
+    width: 40%;
+    order: 1;
+    margin-left: 20px;
+}
+
+.left-header {
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.column-right {
+    height: auto;
+    order: 2;
+    width: 80%;
+    width: 100%;
+}
+
+.column-left h3 {
+    color: #2a4451;
+    text-transform: uppercase;
+}
+
+td h3 {
+    color: #2a4451;
+    font-size: 14px;
+}
+
+table tr td {
+    padding-top: 0;
+}
+
+table tr {
+    padding-top: 1em;
+}
+
+tr:nth-child(2) td {
+    padding-top: 0;
+}
+
+.table-right  {
+    border-collapse: collapse;
+    margin-top: 8px;
+    line-height: 0px;
+}
+
+.table-education {
+    margin-top: 8px;
+    border-collapse: collapse;
+}
+
+.table-left {
+}
+
+a:visited {
+    color: blue;
+}
+
+.experience_head b {
+    color: #2a4451;
+}
+
+.experience {
+    margin-bottom: 30px;
+}
+
+
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #2a4451;
+    display: flex;
+}
+
+.experience-prog {
+    display: grid;
+    grid-template-columns: 80px auto 60px auto;
+}
+
+.empty {
+    height: 30px;
+}
+
+.no_ {
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.soft-skills {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.left-skills {
+    width: 80%;
+    border-right: 1px solid blue;
+}
+
+.left-skills .right-skills p b {
+    color: #2a4451;
+}
+
+.right-skills {
+    margin-left: -40px;
+}
+
+.main-cover {
+    position: absolute;
+    top: 200px;
+    height: 900px;
+    width: 100%;
+    background:  rgba(10, 33, 46, 0.7);
+    background: 
+    /* linear-gradient( */
+    /*     rgba(10, 33, 46, 0.8), */
+    /*     rgba(10, 33, 46, 0.8) */
+    /* ), */
+        url(file:///home/flo/Workspace/Personal-Website/public/cv/pdf/me.jpg);
+
+    /* background-image: url(file:///home/i3/Pictures/application/679A6694.jpg); */
+    background-position: center;
+    background-size: cover;
+
+}
+
+.from {
+    position: absolute;
+    top: 150px;
+    width: 160px;
+    /* border-top: 1px solid black; */
+    margin-left: 40px;
+}
+
+.date {
+    position: absolute;
+    bottom: 100px;
+    color: white;
+    background: rgba(10, 33, 46, 1);
+
+}
+
+.headline {
+    position: absolute;
+    top: 60px;
+    color: white;
+    background: rgba(10, 33, 46, 1);
+}
+.headline h1 {
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.date p {
+    margin-left: 60px;
+    margin-right: 10px;
+}
+
+.right-header-cover {
+    margin-top: 30px;
+}
+
+.adress {
+    margin-left: 180px;
+}
+
+.from p {
+    font-size: 20px;
+}
+
+
+
+.main {
+}
