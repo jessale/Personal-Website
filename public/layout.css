@@ -137,7 +137,11 @@ iframe {
 
 .window-term {
     z-index: auto;
-    top: 40px;
+    top: 50%;
+    left: 40%;
+    margin-left: -250px;
+    margin-top: -300px;
+    /* top: 40px; */
     width: 100%;
     position: relative;
     max-width: 600px;

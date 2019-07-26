@@ -40,7 +40,7 @@ function term(test, startup){
     function typeConsole(){
 
         var options = {
-            strings: ["<i>First</i> sentence.", "<h1>Welcome!</h1><br>My name is <span style='color:red;'>Flo</span>. I'm a GNU/Linux Admin and Developer from Augsburg, Germany. <br>I enjoy solving challenging problems, learning new things and programming.<br><br>Find out more about me: <ul class='terminal-ul'><li onclick=checkifexists('#explorer',explorer);>Projects</li><li onclick=checkifexists('#cv',cv)>Resume</li></ul>Or type <span style='color:red;'>'help'</span> into the command prompt for more info<br><br>"],
+            strings: ["<i>First</i> sentence.", "<h1>Welcome!</h1><br>My name is <span style='color:red;'>Flo</span>. I'm a GNU/Linux Admin and Developer from Augsburg, Germany. <br>I enjoy solving challenging problems, learning new things and programming.<br><br>Find out more about me: <ul class='terminal-ul'><li onclick=checkifexists('#explorer',explorer);>Projects</li><li onclick=checkifexists('#cv',cv)>Skills & Resume</li></ul>Or type <span style='color:red;'>'help'</span> into the command prompt for more info<br><br>"],
             typeSpeed: 10,
         };
 
