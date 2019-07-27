@@ -25,4 +25,4 @@ Backend was written in Node using ExpressJS.
 - [ ] Mobile Version
 - [ ] Maximize Windows
 - [x] Curl Simulation
-- [ ] SSL! (namecheap doesn't allow lets encrypt)
+- [x] SSL! (namecheap doesn't allow lets encrypt)
