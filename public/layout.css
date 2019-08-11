@@ -152,6 +152,11 @@ iframe {
     position: absolute!important;
 }
 
+.terminal-wrapper {
+    position: fixed;
+    top:0;
+}
+
 .cmd-clipboard {
     display: none;
 }
