@@ -152,6 +152,10 @@ iframe {
     position: absolute!important;
 }
 
+.cmd-clipboard {
+    display: none;
+}
+
 .window {
   z-index: auto;
   height:90%;
