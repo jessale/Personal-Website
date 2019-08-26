@@ -7,7 +7,7 @@ title: Floshodan.io
 subtitle: Blog about everything
 description:
 keywords:
-author: Flo Shodan
+author: Flo 
 language:
 timezone:
 
@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://localhost:3000/blog
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :post_title/
 permalink_defaults:
 
 # Directory
@@ -39,10 +39,11 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace:
+  enable: false
+prism_plugin:
+  mode: 'preprocess'
+  theme: 'atom-dark'
+  line_number: false
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -73,7 +74,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: minimal
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
