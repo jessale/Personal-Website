@@ -15,13 +15,13 @@ iframe {
 .desktop {
 	height: 100%;
 	display: flex;
-  background-image: url(img/background.jpg);
+  background-image: url(img/Austria_by_Rutger_Heijmerikx.jpg);
   background-size: cover;
   background-color: #cccccc;
 }
 
 .blurred-bg{
-  background-image:url(img/background-blur.jpg);
+  background-image:url(img/Austria_by_Rutger_Heijmerikx_blury.jpg);
   background-repeat:no-repeat;
 	background-size: cover;
 	background-attachment: fixed;

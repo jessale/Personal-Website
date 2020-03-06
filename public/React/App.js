@@ -71,7 +71,7 @@ class App extends React.Component {
     }
 
     getWeather = async (e) => {
-        const api_call = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Augsburg&APPID=2ed24c214a4f031c0c685933094a6bf4&units=metric');
+        const api_call = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Augsburg&APPID=2ed24c214a4f031c0c685933094a6bf4&units=metric');
         const data = await api_call.json(); 
         console.log(data);
         this.setState({
@@ -91,7 +91,7 @@ class App extends React.Component {
             getWeather={this.getWeather}
             temperature={this.state.temperature}
             city={this.state.city}
-            icon={'http://openweathermap.org/img/w/' + this.state.icon + '.png'}
+            icon={'https://openweathermap.org/img/w/' + this.state.icon + '.png'}
             country={this.state.country}
             weather={this.state.weather}
                 />
