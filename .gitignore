@@ -1,3 +1,4 @@
 cv/
 public/cv/pdf/
-package-lock-json
+rest-api/package-lock.json
+.gitignore
